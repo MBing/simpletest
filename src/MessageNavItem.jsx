@@ -6,7 +6,7 @@ import MessagesData from './messagesData';
 export default class Message extends Component {
     constructor (props) {
         super(props);
-        console.log(props.message);
+        // console.log(props.message);
         this.message = props.message;
     }
     deleteMessage (id) {

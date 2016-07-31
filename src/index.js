@@ -5,7 +5,7 @@ import Home from './Home';
 import Messages from './Messages';
 import Message from './Message';
 import MessageDelete from './MessageDelete';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, Redirect, browserHistory } from 'react-router';
 
 
 var routes = (

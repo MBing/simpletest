@@ -9,34 +9,24 @@ const initialMessagesState = {
 };
 
 var messageListReducer = function(state = initialMessagesState, action) {
+    var msgs = state.messages.filter((msg) => msg.uid !== action.id) || state.messages;
     var msg = state.messages.filter((msg) => msg.uid === action.id);
-    var msgs = state.messages.filter((msg) => msg.uid !== action.id);
-    console.log('messages', msgs);
+    msg = msg[0];
     switch (action.type) {
         case SHOW_ALL_MESSAGES:
             return  Object.assign({}, state, {
                 messages: state.messages
             });
         case ACTIVE_MESSAGE:
-            console.log('active msg id', action.id);
-            console.log('active msg state', msg[0]);
-            // action.id beschikbaar om bericht op te halen
-            // console.log('state op messages voor active msg', state.message);
             return  Object.assign({}, state, {
-                message: msg[0],
+                message: msg,
                 id: action.id
             });
         case DELETE_MESSAGE:
-            // MessagesData.deleteMessage(action.id);
-            // state.messages
-            console.log('vanuit action ', action.id);
-            console.log('vanuit action de state ', state.messages);
-            // console.log('vanuit action get all', MessagesData.getAll());
-            // console.log(state.messages.filter((msg) => msg.uid !== action.id));
             return  Object.assign({}, state, {
                 messages: msgs,
-                message: state.messages,
-                id: action.id
+                // message: msgs[0],
+                // id: msgs[0].uid
             });
         default:
             return state

@@ -10,16 +10,16 @@ const mapStateToProps = function(state, props) {
 
 class Message extends Component {
     componentWillMount() {
-        // check if the message is still available
         if (this.props.data.id !== this.props.params.uid) {
             this.props.dispatch(activeMessage(this.props.params.uid));
         }
     }
     render() {
+        var message = this.props.data.message || this.props.data.messages[0];
         return (
             <div>
-                <h1>Hello, {this.props.data.message.sender}!</h1>
-                <p>{ this.props.data.message.message }</p>
+                <h1>Hello, {message.sender}!</h1>
+                <p>{ message.message }</p>
             </div>
         );
     }

@@ -10,31 +10,15 @@ var mapStateToProps = function(state, props) {
     };
 };
 
-// function mapDispatchToProps(dispatch) {
-//     console.log('bezig met dispatch');
-//     return {
-//         onMessageDelete: (id) => dispatch(deleteMessage(id))
-//     };
-// }
-
 class MessageNavItem extends Component {
-    constructor (props) {
-        super(props);
-        // console.log('++++++++++++++++++++', props.message);
-        this.message = props.message;
+    onMessageDelete (id) {
+        this.props.dispatch(deleteMessage(id));
     }
-    // onMessageDelete = (id) => {
-    //     this.props.dispatch(deleteMessage(id));
-    //     console.log(this.props);
-    // };
-
     render() {
         return (
-            <li key={ this.message.uid }>
-                <Link to={`/messages/${this.message.uid}`} activeStyle={ header.isActive }>{this.message.sender}</Link>
-                {/*<Link to={`/messages/delete/${this.message.uid}`}> X </Link>*/}
-                {/*<button onClick={ this.deleteMessage.bind(this.message.uid) }>X</button>*/}
-                {/*<button onClick={ this.props.dispatch(deleteMessage(this.message.uid)) }>X</button>*/}
+            <li key={ this.props.message.uid }>
+                <Link to={`/messages/${this.props.message.uid}`} activeStyle={ header.isActive }>{this.props.message.sender}</Link>
+                <button onClick={ this.onMessageDelete.bind(this,this.props.message.uid) }>X</button>
             </li>
         );
     }

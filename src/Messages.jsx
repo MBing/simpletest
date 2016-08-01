@@ -10,7 +10,6 @@ var mapStateToProps = function(state, props) {
 
 class Messages extends Component {
     render() {
-
         this.messages = this.props.data.messages.map(function (message) {
             return (
                 <MessageNavItem message={message} key={message.uid} />

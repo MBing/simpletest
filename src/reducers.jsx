@@ -9,7 +9,7 @@ const initialMessagesState = {
 };
 
 var messageListReducer = function(state = initialMessagesState, action) {
-    var msgs = state.messages.filter((msg) => msg.uid !== action.id) || state.messages;
+    var msgs = state.messages.filter((msg) => msg.uid !== action.id);
     var msg = state.messages.filter((msg) => msg.uid === action.id);
     msg = msg[0];
     switch (action.type) {
@@ -25,8 +25,6 @@ var messageListReducer = function(state = initialMessagesState, action) {
         case DELETE_MESSAGE:
             return  Object.assign({}, state, {
                 messages: msgs,
-                // message: msgs[0],
-                // id: msgs[0].uid
             });
         default:
             return state

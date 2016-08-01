@@ -1,9 +1,9 @@
-import React, { Component, contextTypes, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, browserHistory } from 'react-router';
-import { activeMessage, deleteMessage, showAllMessages, DELETE_MESSAGE, SHOW_ALL_MESSAGES } from './actions';
+import { deleteMessage } from './actions';
 
-var mapStateToProps = function(state, props) {
+var mapStateToProps = function(state) {
     return {
         data: state
     };
@@ -12,8 +12,8 @@ var mapStateToProps = function(state, props) {
 class MessageNavItem extends Component {
     onMessageDelete (id) {
         this.props.dispatch(deleteMessage(id));
-        // Move back to parent after deletion complete
-        browserHistory.push('/messages');
+        // Only redirect state if current was deleted
+        if (id === this.props.data.message.uid) browserHistory.push('/messages');
     }
     render() {
         return (

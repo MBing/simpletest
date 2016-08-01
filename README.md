@@ -1,6 +1,6 @@
 ## Simple test
 
-`
-npm install
-npm start
-`
+```javascript
+    npm install
+    npm start
+```

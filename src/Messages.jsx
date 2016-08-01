@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import MessageNavItem from './MessageNavItem';
-import MessagesData from './messagesData';
 
-export default class Messages extends Component {
+var mapStateToProps = function(state, props) {
+    return {
+        data: state
+    };
+};
+
+class Messages extends Component {
     render() {
-        this.messages = MessagesData.getAll().map(function (message) {
+
+        this.messages = this.props.data.messages.map(function (message) {
             return (
                 <MessageNavItem message={message} key={message.uid} />
             )
@@ -19,3 +26,6 @@ export default class Messages extends Component {
         );
     }
 }
+Messages = connect(mapStateToProps)(Messages);
+
+export default Messages;

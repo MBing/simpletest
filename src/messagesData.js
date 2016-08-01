@@ -2,7 +2,7 @@
  * Created by Martin on 30/07/16.
  */
 
-const originalData = [
+let data = [
     {
         "uid": "21",
         "sender": "Ernest Hemingway",
@@ -46,14 +46,16 @@ const originalData = [
         "time_sent": 1456730427
     }
 ];
-var data = originalData.slice();
 
 exports.getAll = () => data;
 exports.getMessage = (id) => {
+    console.log(data);
     var msg = data.filter((msg) => msg.uid === id);
+    console.log('getting data', id);
+    console.log('getting data here', msg);
     return msg[0] || {};
 };
+exports.getMessageByIndex = (index) => data[index];
 exports.deleteMessage = (id) => {
     data = data.filter((msg) => msg.uid !== id);
-    // console.log(data);
 };

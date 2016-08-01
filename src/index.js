@@ -1,12 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { createStore } from 'redux'
+import { Provider, connect } from 'react-redux';
+import reducers from './reducers';
 import App from './App';
 import Home from './Home';
 import Messages from './Messages';
 import Message from './Message';
-import MessageDelete from './MessageDelete';
-import { Router, Route, Redirect, browserHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
+var rootElementDOM = document.getElementById('root');
+
+var store = createStore(reducers, window.devToolsExtension && window.devToolsExtension());
 
 var routes = (
     <Router history={ browserHistory }>
@@ -15,12 +20,15 @@ var routes = (
             <Route path="messages" components={{sidebar: Messages, main: Home}}>
                 {/*<IndexRoute component={ Messages }/>*/}
                 <Route path=":uid" component={ Message }/>
-                <Route path="delete/:uid" component={ MessageDelete }/>
             </Route>
         </Route>
     </Router>
 );
 
 document.addEventListener( 'DOMContentLoaded', function() {
-    render(routes, document.getElementById('root'));
+    render(
+        <Provider store={store} >
+            {routes}
+        </Provider>,
+        rootElementDOM);
 });

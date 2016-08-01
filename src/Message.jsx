@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
-import MessagesData from './messagesData';
+import { connect } from 'react-redux';
 
-export default class Message extends Component {
+var mapStateToProps = function(state, props) {
+    return {
+        data: state
+    };
+};
+
+class Message extends Component {
+    constructor(props) {
+        super(props);
+        console.log(props.data.message);
+        this.message = props.data.message.message;
+        // this.message = 'test';
+    }
     render() {
-        let data = MessagesData.getMessage(this.props.params.uid);
         return (
             <div>
                 <h1>Hello, world and you.</h1>
-                <p>{ data.message }</p>
+                <p>{ this.message }</p>
             </div>
         );
     }
 }
+
+
+Message = connect(mapStateToProps)(Message);
+export default Message;

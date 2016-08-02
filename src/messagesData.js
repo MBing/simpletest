@@ -47,12 +47,4 @@ let data = [
     }
 ];
 
-exports.getAll = () => data;
-exports.getMessage = (id) => {
-    var msg = data.filter((msg) => msg.uid === id);
-    return msg[0] || {};
-};
-exports.getMessageByIndex = (index) => data[index];
-exports.deleteMessage = (id) => {
-    data = data.filter((msg) => msg.uid !== id);
-};
+export default data;

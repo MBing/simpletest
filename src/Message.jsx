@@ -3,19 +3,22 @@ import { connect } from 'react-redux';
 import { activeMessage } from './actions';
 
 const mapStateToProps = function(state, props) {
+   var message = state.messages.find(msg => msg.uid === state.activeMessage);
+
     return {
-        data: state
+        message: message,
+        activeMessage: state.activeMessage
     };
 };
 
 class Message extends Component {
     componentWillMount() {
-        if (this.props.data.id !== this.props.params.uid) {
+        if (this.props.activeMessage !== this.props.params.uid) {
             this.props.dispatch(activeMessage(this.props.params.uid));
         }
     }
     render() {
-        var message = this.props.data.message || this.props.data.messages[0];
+        var message = this.props.message;
         return (
             <div>
                 <h1>Hello, {message.sender}!</h1>

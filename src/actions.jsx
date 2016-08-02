@@ -20,9 +20,3 @@ export function activeMessage (id) {
     }
 };
 
-export function showAllMessages (messages) {
-    return {
-        type: SHOW_ALL_MESSAGES,
-        messages
-    }
-};

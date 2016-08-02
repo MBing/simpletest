@@ -5,7 +5,7 @@ import { deleteMessage } from './actions';
 
 var mapStateToProps = function(state) {
     return {
-        data: state
+        activeMessage: state.activeMessage
     };
 };
 
@@ -13,7 +13,7 @@ class MessageNavItem extends Component {
     onMessageDelete (id) {
         this.props.dispatch(deleteMessage(id));
         // Only redirect state if current was deleted
-        if (id === this.props.data.message.uid) browserHistory.push('/messages');
+        if (id === this.props.activeMessage) browserHistory.push('/messages');
     }
     render() {
         return (

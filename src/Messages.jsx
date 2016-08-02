@@ -4,13 +4,13 @@ import MessageNavItem from './MessageNavItem';
 
 var mapStateToProps = function(state, props) {
     return {
-        data: state
+        messages: state.messages
     };
 };
 
 class Messages extends Component {
     render() {
-        this.messages = this.props.data.messages.map(function (message) {
+        var messages = this.props.messages.map(function (message) {
             return (
                 <MessageNavItem message={message} key={message.uid} />
             )
@@ -19,7 +19,7 @@ class Messages extends Component {
             <div>
                 <h1>Hello, messages and you.</h1>
                 <ul>
-                    {this.messages}
+                    {messages}
                 </ul>
             </div>
         );

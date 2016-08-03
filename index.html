@@ -51,8 +51,26 @@
         border-collapse: collapse;
         border-spacing: 0;
       }
+      .main-header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 50px;
+      }
       a.is-active {
         color: red;
+      }
+      .content,
+      aside.sidebar {
+        display: flex;
+        flex: 0 0 250px;
+      }
+      aside.sidebar {
+        flex-direction: column;
+      }
+      .list-group {
+        display: flex;
+        flex-direction: column;
       }
     </style>
   </head>

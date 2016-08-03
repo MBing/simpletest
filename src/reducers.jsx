@@ -1,7 +1,6 @@
 import React from 'react';
 import messages from './messagesData';
-// import { combineReducers } from 'redux';
-import { ACTIVE_MESSAGE, DELETE_MESSAGE, SHOW_ALL_MESSAGES } from './actions';
+import { ACTIVE_MESSAGE, DELETE_MESSAGE } from './actions';
 
 const initialMessagesState = {
     messages: messages,
@@ -22,11 +21,5 @@ var messageListReducer = function(state = initialMessagesState, action) {
             return state
     }
 };
-//
-// const reducers = combineReducers({
-//         messageListReducer,
-//         messageReducer
-//     });
-//
-// export default reducers;
+
 export default messageListReducer;

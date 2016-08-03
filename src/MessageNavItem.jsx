@@ -15,11 +15,12 @@ class MessageNavItem extends Component {
         // Only redirect state if current was deleted
         if (id === this.props.activeMessage) browserHistory.push('/messages');
     }
+
     render() {
         return (
             <li key={ this.props.message.uid }>
-                <Link to={`/messages/${this.props.message.uid}`} activeClassName="is-active">{this.props.message.sender}</Link>
-                <button onClick={ this.onMessageDelete.bind(this,this.props.message.uid) }>X</button>
+                <Link to={`/messages/${this.props.message.uid}`} activeClassName="is-active"><strong>{this.props.message.subject}</strong> <small>from</small> <em>{this.props.message.sender}</em></Link>
+                <button bsStyle="primary" onClick={ this.onMessageDelete.bind(this,this.props.message.uid) }>X</button>
             </li>
         );
     }

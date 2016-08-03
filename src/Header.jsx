@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router';
+import { store } from './store';
+import { activeMessage } from './actions';
 
-export default class Header extends Component {
+
+class Header extends Component {
     render() {
         return (
-            <nav>
+            <nav className="main-header">
                 <IndexLink to="/" activeClassName="is-active">Home</IndexLink>
-                <Link to="/home" activeClassName="is-active">App</Link>
-                <Link to="/contacts" activeClassName="is-active">Contacts</Link>
-                <Link to="/messages" activeClassName="is-active">Messages</Link>
+                <Link to="/messages" activeClassName="is-active" onClick={handleEnter}>Messages</Link>
             </nav>
         );
     }
 }
+
+function handleEnter(nextState) {
+    store.dispatch(activeMessage(null));
+}
+export default Header;

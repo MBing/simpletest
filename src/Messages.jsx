@@ -15,9 +15,9 @@ class Messages extends Component {
                 <MessageNavItem message={message} key={message.uid} />
             )
         });
+        console.log(messages);
         return (
             <div>
-                <h1>Hello, messages and you.</h1>
                 <ul>
                     {messages}
                 </ul>

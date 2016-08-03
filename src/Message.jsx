@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { activeMessage } from './actions';
 
+
 const mapStateToProps = function(state, props) {
    var message = state.messages.find(msg => msg.uid === state.activeMessage);
 
@@ -19,6 +20,12 @@ class Message extends Component {
     }
     render() {
         var message = this.props.message;
+        if (!message) {
+            return (
+                <div></div>
+            )
+        }
+
         return (
             <div>
                 <h1>Hello, {message.sender}!</h1>

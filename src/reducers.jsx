@@ -1,5 +1,5 @@
 import React from 'react';
-import messages from './messagesData';
+import messages from './api/messagesData';
 import { ACTIVE_MESSAGE, DELETE_MESSAGE } from './actions';
 
 const initialMessagesState = {

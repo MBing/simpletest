@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, browserHistory } from 'react-router';
-import { deleteMessage } from './actions';
+import { deleteMessage } from '../actions';
 
 var mapStateToProps = function(state) {
     return {

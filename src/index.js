@@ -2,10 +2,10 @@ import React from 'react';
 import { render } from 'react-dom';
 import { store } from './store';
 import { Provider } from 'react-redux';
-import App from './App';
-import Home from './Home';
-import Messages from './Messages';
-import Message from './Message';
+import App from './components/App';
+import Home from './components/Home';
+import Messages from './components/Messages';
+import Message from './components/Message';
 import { activeMessage } from './actions';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 

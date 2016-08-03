@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router';
-import { store } from './store';
-import { activeMessage } from './actions';
+import { store } from '../store';
+import { activeMessage } from '../actions';
 
 
 class Header extends Component {

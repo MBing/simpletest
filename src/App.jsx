@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
 
-// ControllerView
-
 export default class App extends Component {
     render() {
         return (
@@ -16,6 +14,7 @@ export default class App extends Component {
                         {this.props.main}
                     </div>
                 </div>
+                {this.props.children}
             </div>
         );
       }

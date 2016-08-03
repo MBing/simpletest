@@ -10,12 +10,12 @@ export function deleteMessage (id, messages) {
         id,
         messages
     }
-};
+}
 
 export function activeMessage (id) {
     return {
         type: ACTIVE_MESSAGE,
         id
     }
-};
+}
 

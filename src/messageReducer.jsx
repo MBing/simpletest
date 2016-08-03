@@ -7,7 +7,7 @@ const initialMessagesState = {
     activeMessage: null
 };
 
-var messageListReducer = function(state = initialMessagesState, action) {
+var messageReducer = function(state = initialMessagesState, action) {
     switch (action.type) {
         case ACTIVE_MESSAGE:
             return  Object.assign({}, state, {
@@ -22,4 +22,4 @@ var messageListReducer = function(state = initialMessagesState, action) {
     }
 };
 
-export default messageListReducer;
+export default messageReducer;

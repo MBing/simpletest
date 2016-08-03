@@ -1,4 +1,4 @@
 import { createStore } from 'redux';
-import reducers from './reducers';
+import messageReducer from './messageReducer';
 
-export const store = createStore(reducers, window.devToolsExtension && window.devToolsExtension());
+export const store = createStore(messageReducer, window.devToolsExtension && window.devToolsExtension());

@@ -20,7 +20,7 @@ class MessageNavItem extends Component {
         return (
             <li key={ this.props.message.uid }>
                 <Link to={`/messages/${this.props.message.uid}`} activeClassName="is-active"><strong>{this.props.message.subject}</strong> <small>from</small> <em>{this.props.message.sender}</em></Link>
-                <button bsStyle="primary" onClick={ this.onMessageDelete.bind(this,this.props.message.uid) }>X</button>
+                <button onClick={ this.onMessageDelete.bind(this,this.props.message.uid) }>X</button>
             </li>
         );
     }

@@ -13,7 +13,8 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   devtool: 'source-map',
   module: {
@@ -22,6 +23,10 @@ module.exports = {
       exclude: /(node_modules)/,
       loaders: ['react-hot', 'babel-loader'],
       include: path.join(__dirname, 'src')
+    }, {
+      test: /\.less$/,
+      exclude: /(node_modules)/,
+      loader: "style!css!less"
     }]
   },
   resolve: {

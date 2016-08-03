@@ -1,5 +1,35 @@
+# Dependency directories
 node_modules
-npm-debug.log
-.DS_Store
+jspm_packages
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Build folder
 dist
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# OS generated files
+.DS_Store
+.Trashes
+Thumbs.db
+
+# Workspace IDE files
 .idea
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history

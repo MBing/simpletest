@@ -22,7 +22,7 @@ Each message in the navigation section should display the following fields from 
      **/
 ```
 
-The `time_sent` should be presented in the form "Mon 06 July, 10:53", in local time.
+The `time_sent` should be presented in the form `Mon 06 July, 10:53`, in local time.
 
 When a message entry in the left-hand navigation is clicked, the contents of the field `message` from
 the entry that was clicked should be displayed in the section on the right.

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, browserHistory } from 'react-router';
-import { deleteMessage } from '../actions';
+import { Link } from 'react-router';
+import moment from 'moment';
+import classNames from 'classnames';
 
 var mapStateToProps = function(state) {
     return {
@@ -10,17 +11,21 @@ var mapStateToProps = function(state) {
 };
 
 class MessageNavItem extends Component {
-    onMessageDelete (id) {
-        this.props.dispatch(deleteMessage(id));
-        // Only redirect state if current was deleted
-        if (id === this.props.activeMessage) browserHistory.push('/messages');
+
+    onRead (id) {
+        // Server API: The 'unread' state would be changed by activeMessage init action dispatch
+        this.props.message.unread = false
     }
 
     render() {
+        var listClass = classNames({
+            'list-item': true,
+            'unread': this.props.message.unread
+        });
         return (
-            <li key={ this.props.message.uid }>
-                <Link to={`/messages/${this.props.message.uid}`} activeClassName="is-active"><strong>{this.props.message.subject}</strong> <small>from</small> <em>{this.props.message.sender}</em></Link>
-                <button onClick={ this.onMessageDelete.bind(this,this.props.message.uid) }>X</button>
+            <li className={listClass} onClick={this.onRead.bind(this, this.props.message.uid)} key={ this.props.message.uid }>
+                <Link to={`/messages/${this.props.message.uid}`} activeClassName="is-active"><strong>{this.props.message.subject}</strong> | <em>{this.props.message.sender}</em></Link>
+                <p><small>{moment(this.props.message.time_sent).format('ddd DD MMMM, HH:mm ')}</small></p>
             </li>
         );
     }

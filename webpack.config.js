@@ -30,3 +30,21 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   }
 };
+
+// debug: true,
+// watch: true,
+// watchDelay: 300,
+// , {
+//   loaders: [{
+//     test: /\.less$/,
+//     exclude: /(node_modules)/,
+//     loaders: ['style-loader', 'css-loader', 'less-loader'],
+//     include: path.join(__dirname, 'src/css')
+//   }]
+// }
+
+// output: {
+//   path: path.resolve(__dirname, 'dist'),
+//       filename: 'bundle.js',
+//       publicPath: 'dist'
+// },

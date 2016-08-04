@@ -10,19 +10,27 @@ var mapStateToProps = function(state, props) {
 
 class Messages extends Component {
     render() {
-        var messages = this.props.messages.map(function (message) {
+        if (this.props.messages.length > 0) {
+            var messages = this.props.messages.map(function (message) {
+                return (
+                    <MessageNavItem message={message} key={message.uid} />
+                )
+            });
             return (
-                <MessageNavItem message={message} key={message.uid} />
+                <div>
+                    <ul>
+                        {messages}
+                    </ul>
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <h1>No more messages to display</h1>
+                </div>
             )
-        });
-        console.log(messages);
-        return (
-            <div>
-                <ul>
-                    {messages}
-                </ul>
-            </div>
-        );
+        }
+
     }
 }
 Messages = connect(mapStateToProps)(Messages);

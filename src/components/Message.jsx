@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { activeMessage } from '../actions';
-
+import { browserHistory } from 'react-router';
+import { deleteMessage } from '../actions';
 
 const mapStateToProps = function(state, props) {
    var message = state.messages.find(msg => msg.uid === state.activeMessage);
@@ -18,6 +19,11 @@ class Message extends Component {
             this.props.dispatch(activeMessage(this.props.params.uid));
         }
     }
+    onMessageDelete (id) {
+        this.props.dispatch(deleteMessage(id));
+        // Only redirect state if current was deleted
+        if (id === this.props.activeMessage) browserHistory.push('/messages');
+    }
     render() {
         var message = this.props.message;
         if (!message) {
@@ -27,7 +33,8 @@ class Message extends Component {
         }
 
         return (
-            <div>
+            <div className="message-item">
+                <button className="btn-close" onClick={ this.onMessageDelete.bind(this, message.uid) }>X</button>
                 <h1>Hello, {message.sender}!</h1>
                 <p>{ message.message }</p>
             </div>

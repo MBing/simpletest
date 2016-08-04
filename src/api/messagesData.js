@@ -1,7 +1,3 @@
-/**
- * Created by Martin on 30/07/16.
- */
-
 let data = [
     {
         "uid": "21",
@@ -47,4 +43,7 @@ let data = [
     }
 ];
 
-export default data;
+export default data.map(function(message) {
+    message.unread = true;
+    return message;
+})

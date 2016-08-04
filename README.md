@@ -18,7 +18,7 @@ Each message in the navigation section should display the following fields from 
     /**
      *   @param {string} sender
      *   @param {string} subject
-     *   @param {number} time_sent
+     *   @param {number} time_sent - milliseconds timestamp
      **/
 ```
 

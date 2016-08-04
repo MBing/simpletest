@@ -1,0 +1,8 @@
+
+language: node_js
+node_js:
+  - "node"
+
+#after_script:
+#  - npm run build && npm test
+#  - npm run codeclimate && npm run coveralls

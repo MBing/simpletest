@@ -66,6 +66,7 @@ The idea behind this setup was to find/create a project that holds cases I will 
 * Modify action to use with Thunk
 * Complete tests
 * Complete documentation (JS DOC)
+* Setup Travis CI
 
 ## Tools/Tech Used
 * [Webstorm](https://www.jetbrains.com/webstorm/)
@@ -82,6 +83,7 @@ The idea behind this setup was to find/create a project that holds cases I will 
 * [Chai](http://chaijs.com/)
 * [Nodemon](https://github.com/remy/nodemon)
 * [JS DOC](http://usejsdoc.org/)
+* [Travis CI](https://travis-ci.org/)
 
 ## Extra
 Set up a better test suite, maybe use [enzyme](http://airbnb.io/enzyme/). 

@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import moment from 'moment';
 import classNames from 'classnames';
+import { store } from '../store';
 
-var mapStateToProps = function(state) {
+let mapStateToProps = function(state) {
     return {
         activeMessage: state.activeMessage
     };
@@ -18,7 +19,10 @@ class MessageNavItem extends Component {
     }
 
     render() {
-        var listClass = classNames({
+        if (store.getState().activeMessage === this.props.message.uid)
+            this.props.message.unread = false;
+
+        let listClass = classNames({
             'list-item': true,
             'unread': this.props.message.unread
         });

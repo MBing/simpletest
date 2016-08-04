@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/MBing/simpletest.svg?branch=master)](https://travis-ci.org/MBing/simpletest)
-
+[![Build Status](https://travis-ci.org/MBing/simpletest.svg?branch=master)](https://travis-ci.org/MBing/simpletest) [![Coverage Status](https://coveralls.io/repos/github/MBing/simpletest/badge.svg?branch=master)](https://coveralls.io/github/MBing/simpletest?branch=master)
 # Simple inbox test with live reloading and build/watch commands
 
 ```
@@ -68,7 +67,7 @@ The idea behind this setup was to find/create a project that holds cases I will 
 * Modify action to use with Thunk
 * Complete tests
 * Complete documentation (JS DOC)
-* Setup Travis CI
+* Complete Coveralls setup
 
 ## Tools/Tech Used
 * [Webstorm](https://www.jetbrains.com/webstorm/)
@@ -86,6 +85,7 @@ The idea behind this setup was to find/create a project that holds cases I will 
 * [Nodemon](https://github.com/remy/nodemon)
 * [JS DOC](http://usejsdoc.org/)
 * [Travis CI](https://travis-ci.org/)
+* [Coveralls](https://coveralls.io)
 
 ## Extra
 Set up a better test suite, maybe use [enzyme](http://airbnb.io/enzyme/). 

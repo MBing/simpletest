@@ -42,8 +42,8 @@ class MessageNavItem extends Component {
             'unread': this.props.message.unread
         });
         return (
-            <li className={listClass} onClick={this.onRead.bind(this, this.props.message.uid)} key={ this.props.message.uid }>
-                <Link to={`/messages/${this.props.message.uid}`} activeClassName="is-active"><strong>{this.props.message.subject}</strong> | <em>{this.props.message.sender}</em></Link>
+            <li className={listClass} key={ this.props.message.uid }>
+                <Link to={`/messages/${this.props.message.uid}`} onClick={this.onRead.bind(this, this.props.message.uid)} activeClassName="is-active"><strong>{this.props.message.subject}</strong> | <em>{this.props.message.sender}</em></Link>
                 <p><small>{moment(this.props.message.time_sent).format('ddd DD MMMM, HH:mm ')}</small></p>
             </li>
         );

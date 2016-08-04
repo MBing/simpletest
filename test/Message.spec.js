@@ -7,7 +7,7 @@ import { should } from 'chai';
 import Message from '../src/components/Message';
 
 describe.skip('Message component', function() {
-    it('Renders HTML', function() {
+    it('Renders the message', function() {
         createRenderer().render(<Message />);
         var result = createRenderer().getRenderOutput();
         console.log(result, "<<< result");

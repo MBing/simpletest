@@ -14,7 +14,8 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    //  Uncomment to get a minified js output, will make redux run slower, so best to create another webpack.config.prod.js
+    //  Uncomment to get a minified js output, will make redux run slower,
+    //  so best to create another webpack.config.prod.js
     // new webpack.optimize.UglifyJsPlugin()
   ],
   devtool: 'source-map',

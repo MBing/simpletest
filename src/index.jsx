@@ -1,3 +1,7 @@
+/**
+ * @author Martin Bing <info@martinbing.com>
+ */
+
 import React from 'react';
 import { render } from 'react-dom';
 import { store } from './store';

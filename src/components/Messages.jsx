@@ -1,3 +1,7 @@
+/**
+ * @author Martin Bing <info@martinbing.com>
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MessageNavItem from './MessageNavItem';

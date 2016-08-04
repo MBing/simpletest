@@ -1,3 +1,7 @@
+/**
+ * @author Martin Bing <info@martinbing.com>
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
@@ -10,14 +14,25 @@ let mapStateToProps = function(state) {
         activeMessage: state.activeMessage
     };
 };
-
+/**
+ * Creates a Message Navigation Item
+ * @class MessageNavItem
+ * @extends Component
+ */
 class MessageNavItem extends Component {
-
+    /**
+     *
+     * @param id
+     */
     onRead (id) {
         // Server API: The 'unread' state would be changed by activeMessage init action dispatch
         this.props.message.unread = false
     }
 
+    /**
+     *
+     * @returns {JSX}
+     */
     render() {
         if (store.getState().activeMessage === this.props.message.uid)
             this.props.message.unread = false;

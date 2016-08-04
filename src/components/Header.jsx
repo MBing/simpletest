@@ -1,9 +1,17 @@
+/**
+ * @author Martin Bing <info@martinbing.com>
+ */
+
 import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router';
 import { store } from '../store';
 import { activeMessage } from '../actions';
 
-
+/**
+ * Creates a Header to use for navigation
+ * @class Header
+ * @extends Component
+ */
 class Header extends Component {
     render() {
         return (

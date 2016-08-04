@@ -1,5 +1,14 @@
+/**
+ * @author Martin Bing <info@martinbing.com>
+ */
+
 import React, { Component } from 'react';
 
+/**
+ * Creates the Home Component
+ * @class Home
+ * @extends Component
+ */
 export default class Home extends Component {
     render() {
         return (

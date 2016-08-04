@@ -1,3 +1,7 @@
+/**
+ * @author Martin Bing <info@martinbing.com>
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { activeMessage } from '../actions';
@@ -13,17 +17,35 @@ const mapStateToProps = function(state, props) {
     };
 };
 
+/**
+ * Creates a Message
+ * @class Message
+ * @extends Component
+ */
 class Message extends Component {
+    /**
+     *
+     */
     componentWillMount() {
         if (this.props.activeMessage !== this.props.params.uid) {
             this.props.dispatch(activeMessage(this.props.params.uid));
         }
     }
+
+    /**
+     *
+     * @param id
+     */
     onMessageDelete (id) {
         this.props.dispatch(deleteMessage(id));
         // Only redirect state if current was deleted
         if (id === this.props.activeMessage) browserHistory.push('/messages');
     }
+
+    /**
+     *
+     * @returns {JSX}
+     */
     render() {
         var message = this.props.message;
         if (!message) {

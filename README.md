@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/MBing/simpletest.svg?branch=master)](https://travis-ci.org/MBing/simpletest)
+
 # Simple inbox test with live reloading and build/watch commands
 
 ```

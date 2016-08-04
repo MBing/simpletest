@@ -10,7 +10,8 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: 'dist'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -25,7 +26,12 @@ module.exports = {
       exclude: /(node_modules)/,
       loaders: ['react-hot', 'babel-loader'],
       include: path.join(__dirname, 'src')
-    }]
+    }, {
+        test: /\.less$/,
+        exclude: /(node_modules)/,
+        loaders: ['style-loader', 'css-loader', 'less-loader'],
+        include: path.join(__dirname, 'src/css')
+      }]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -43,9 +49,3 @@ module.exports = {
 //     include: path.join(__dirname, 'src/css')
 //   }]
 // }
-
-// output: {
-//   path: path.resolve(__dirname, 'dist'),
-//       filename: 'bundle.js',
-//       publicPath: 'dist'
-// },
